@@ -1,0 +1,26 @@
+<div id="evaluation-templates" class="evaluation-active">
+  <div class="row">
+    <div class="col-md-12 title">
+      <span>
+        <%= link_to t("evaluation_template.buttons.new"),
+          new_admin_evaluation_template_path, class: "btn btn-success pull-right" %>
+      </span>
+    </div>
+  </div>
+  <table id="evaluation-template-tbl" class="table table-bordered display"
+    data-source="<%= admin_evaluation_templates_url format: "json" %>" >
+    <thead>
+      <tr class="active">
+        <th></th>
+        <th class="name"><%= t "table.thead.name" %></th>
+        <th class="min-point"><%= t "table.thead.min_point" %></th>
+        <th class="max-point"><%= t "table.thead.max_point" %></th>
+        <th class="action"></th>
+        <th class="action"></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+

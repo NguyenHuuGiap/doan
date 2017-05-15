@@ -1,0 +1,8 @@
+en:
+  user_mailer:
+    hello: "Dear %{name},"
+    welcome_mail:
+      subject: "Welcome you to join FTMS"
+      content: "This is your email and password for framgia education account:"
+      user_name: "Your email/username: %{email}"
+      password: "Password: %{password}"

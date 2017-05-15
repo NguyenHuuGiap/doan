@@ -1,0 +1,23 @@
+<%= javascript_include_tag "test.js" %>
+<%= javascript_include_tag "countdown.js" %>
+<div class="col-md-10 col-md-offset-1 width-flash">
+  <div class="row exam">
+    <div class="col-md-8 col-md-offset-1">
+      <div class="title">
+        <center><b><h2><%= @test.user_subject.subject.name %></h2></b></center>
+          <%= tag(:hr) %>
+        <h3 class="pull-right text-danger">
+          <span id="hidden-data" data-time-over-msg="Time over"
+            data-time-remaining=" 30 ">
+          </span>
+          <span class="glyphicon glyphicon-time">&nbsp</span>
+
+          <h1>jQuery Countdown</h1>
+          <div id="defaultCountdown"></div>
+          <b id="divCounter"></b>
+        </h3>
+      </div>
+      <%= render "questions" %>
+    </div>
+  </div>
+</div>

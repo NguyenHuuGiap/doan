@@ -1,0 +1,3 @@
+$.growl.notice({ message: '<%= @message %>'});
+$('table tr#test-<%= @test.id %>')
+  .html('<%= j (render partial: 'trainer/tests/only_test',locals: { object: @test } ) %>');

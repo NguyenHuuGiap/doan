@@ -1,0 +1,20 @@
+en:
+  training_managements:
+    headers:
+      trainee_name: "Name"
+      trainee_type: "Type"
+      location: "Place"
+      status: "Status"
+      university: "University"
+      graduation: "Graduation"
+      language: "Language"
+      start_training_date: "Start training date"
+      leave_date: "Leave date"
+      finish_training_date: "Finish training date"
+      ready_for_real_project: "Ready for real project"
+      contract_date: "Contract date"
+      working_days: "Working days/week"
+      trainer: "Trainer"
+      progress: "Progress"
+      note: "Note"
+      all_status: "All statuses"

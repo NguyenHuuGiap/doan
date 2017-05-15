@@ -1,0 +1,13 @@
+<div id="user-task-<%= user_task.id %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="label-modal"><%= t "tasks.update" %></h4>
+      </div>
+      <div class="modal-body modal-user-task">
+        <%= render "task_form", task: user_task.task, user_task: user_task %>
+      </div>
+    </div>
+  </div>
+</div>

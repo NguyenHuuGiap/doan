@@ -1,0 +1,172 @@
+<div id="trainer-header">
+  <header class="main-header">
+    <%= link_to trainer_root_path, class: "logo" do %>
+      <span class="logo-lg"><%= t :name_system %></span>
+    <% end %>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      </a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li>
+            <%= link_to chats_path do %>
+              <i class="fa fa-weixin" aria-hidden="true"></i>
+              <%= t "chats.chat" %>
+              <span class="label label-danger dropdown-label number-message"></span>
+            <% end %>
+          </li>
+          <li class="dropdown messages-menu">
+            <%= link_to update_notifications_path, class: "dropdown-toggle",
+              data: {toggle:"dropdown"}, method: :patch, remote: true do %>
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-danger dropdown-label number-notification"><%= not_seen_notification %></span>
+            <% end %>
+            <ul class="dropdown-menu">
+              <li class="header">
+                <%= t "layouts.notifications.notification" %></li>
+              <li>
+                <div id="slimScrollDiv">
+                  <ul class="menu" id="slimscroll_admin">
+                    <% current_user.user_notifications.select_notifications
+                      .limit(10).each do |user_notification| %>
+                      <%= render "shared/notification",
+                        notification: user_notification.notification %>
+                    <% end %>
+                  </ul>
+                </div>
+              </li>
+              <li class="footer">
+                <%= link_to t("layouts.notifications.view_all"), notifications_path %>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= avatar_user_tag current_user, "user-image", Settings.image_size_50 %>
+              <span class="hidden-xs"><%= current_user.name %></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <%= avatar_user_tag current_user, "img-circle", Settings.image_size_50 %>
+                <p><%= current_user.name %></p>
+                <div class="col-xs-4 col-xs-offset-4">
+                  <div class="switch-role">
+                    <button class="btn btn-warning">
+                      <%= @namespace.capitalize %>
+                      <span class="caret"></span>
+                    </button>
+                    <ul hidden class="drop">
+                      <%= current_user.decorate.set_link_role %>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="user-footer">
+                <div class="col-xs-4 pull-left">
+                  <%= link_to t("staticpages.profile"), trainer_user_path(current_user),
+                    class: "btn btn-default btn-flat" %>
+                </div>
+                <div class="col-xs-4 pull-right">
+                  <%= link_to t("staticpages.logout"), destroy_user_session_path,
+                    method: :delete, class: "btn btn-default btn-flat" %>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="pull-left">
+          <%= avatar_user_tag current_user, "img-circle", Settings.image_size_50 %>
+        </div>
+        <div class="pull-left info">
+          <p><%= current_user.name %></p>
+        </div>
+      </div>
+      <ul class="sidebar-menu">
+        <% if can? :read, Course %>
+          <li>
+            <%= link_to trainer_courses_path do %>
+              <i class="fa fa-calendar"></i><span><%= t "layouts.courses" %></span>
+            <% end %>
+          </li>
+        <% end %>
+        <% if can? :read, Subject %>
+          <li>
+            <%= link_to trainer_subjects_path do %>
+              <i class="fa fa-laptop"></i><span><%= t "layouts.subjects" %></span>
+            <% end %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to trainer_questions_path do %>
+            <i class="fa fa-laptop"></i><span><%= "Questions" %></span>
+          <% end %>
+        </li>
+        <% if can? :read, User %>
+          <li>
+            <%= link_to trainer_users_path do %>
+              <i class="fa fa-user"></i><span><%= t "layouts.users" %></span>
+            <% end %>
+          </li>
+        <% end %>
+        <% if can?(:read, Evaluation) || can?(:read, EvaluationTemplate) ||
+          can?(:read, Rank) %>
+          <li id="evaluations-header" class="treeview">
+            <a href="javascript:void(0)">
+              <i class="fa fa-book"></i><span><%= t "layouts.evaluations" %></span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <%= render "layouts/side_panel",
+              object: [Evaluation, EvaluationTemplate, Rank] %>
+          </li>
+        <% end %>
+        <% if can?(:read, Role) || can?(:read, Location) ||
+          can?(:read, University) || can?(:read, Status) || can?(:read, UserType) %>
+          <li id="systems-header" class="treeview">
+            <a href="javascript:void(0)">
+              <i class="fa fa-book"></i><span><%= t "layouts.system" %></span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <%= render "layouts/side_panel", object: [Role, Location, University,
+              Status, UserType] %>
+          </li>
+        <% end %>
+        <li id="schedule-header" class="treeview">
+          <a href="javascript:void(0)">
+            <i class="fa fa-sitemap" aria-hidden="true"></i>
+            <span><%= t "layouts.training_schedule" %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li>
+              <%= link_to trainer_organization_charts_path do %>
+                <i class="fa fa-circle-o" aria-hidden="true"></i>
+                <span><%= t "layouts.organization_chart" %></span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to trainer_training_managements_path do %>
+                <i class="fa fa-circle-o" aria-hidden="true"></i>
+                <span><%= t "layouts.training_management" %></span>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <% if can? :read, FeedBack %>
+          <li>
+            <%= link_to trainer_feed_backs_path do %>
+              <i class="fa fa-question" aria-hidden="true"></i>
+              <span><%= t "feed_backs.title" %></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </aside>
+</div>

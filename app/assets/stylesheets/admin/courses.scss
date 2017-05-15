@@ -1,0 +1,147 @@
+#admin-courses {
+  margin-bottom: 100px;
+
+  .list-course-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+  }
+
+  .course-item {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .list-users {
+    .list-users-course {
+      justify-content: center;
+      -webkit-justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 10px;
+      padding-left: 0px;
+    }
+
+    .no-user {
+      text-align: center;
+      color: #FB240B;
+    }
+  }
+  div.modal-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 20%;
+
+    div.users-modal {
+      width: 90%;
+      display: inline;
+      margin-left: 10px;
+    }
+  }
+
+  .badge {
+    margin-left: 15px;
+    padding: 0px;
+    z-index: 4;
+    bottom: 30px;
+    vertical-align: top;
+    box-shadow: 0 1px 1px #000000;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    color: black;
+  }
+
+  .badge-img {
+    display: inline-block;
+
+    p {
+      color: #fff;
+      margin-top: 13px;
+      font-size: 140%;
+      cursor: pointer;
+    }
+  }
+
+  .normal-course {
+    .path-content {
+      background-color: #fff;
+    }
+  }
+
+  .modal-dialog {
+    .modal-content {
+      width: 100%;
+      height: 460px;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      text-overflow: ellipsis;
+      overflow-y: ellipsis;
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+
+      img {
+        margin: 5px 0px;
+      }
+      h4 {
+        margin-top: 10px;
+        text-align: left;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .path-parent {
+    .path-header {
+      height: 50px;
+      border-top-right-radius:10px;
+      border-top-left-radius: 10px;
+      background-color: #3C8DBC;;
+    }
+
+    .path-content {
+      min-height: 150px;
+      box-shadow: 1px 2px gray;
+      border-radius: 15px;
+      margin-top: 30px;
+
+      h2 {
+        font-weight: 300;
+        a {
+          color: #fff;
+          vertical-align: middle;
+        }
+      }
+
+      .truncate {
+        padding: 0 2% 0 2%;
+        text-align: center;
+        width: 95%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+
+    .path-description {
+      font-weight: 100;
+      font-size: 100%;
+      width: 90%;
+      text-align: center;
+      padding-left: 5%;
+      margin-bottom: 3%;
+      color: #393d40;
+      line-height: 2;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

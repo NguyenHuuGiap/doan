@@ -1,0 +1,18 @@
+<div class="row document-field">
+  <div class="col-md-6">
+    <%= f.text_field :name, placeholder: t("subjects.document_name"),
+      class: "form-control" %>
+  </div>
+  <div class="col-md-5">
+    <% unless f.object.new_record? %>
+      <i>
+        <%= f.label t("subjects.document_url") %>
+        <%= link_to f.object.name, f.object.content.url, target: "_blank" %>
+      </i>
+    <% end %>
+    <%= f.file_field :content %><br>
+  </div>
+  <div class="col-md-1">
+    <%= link_to_remove_fields t("subjects.document_remove"), f %>
+  </div>
+</div>

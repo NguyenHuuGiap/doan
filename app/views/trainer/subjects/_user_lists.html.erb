@@ -1,0 +1,16 @@
+<table class="user-task-info table">
+  <thead>
+    <tr>
+      <th class="col-sm-3"><%= t "subjects.fields.name" %></th>
+      <th class="col-sm-2"><%= t "subjects.fields.start_date" %></th>
+      <th class="col-sm-2"><%= t "subjects.fields.end_date" %></th>
+      <th class="col-sm-1"><%= t "subjects.fields.status" %></th>
+      <th class="col-sm-2"><%= t "subjects.fields.progress" %></th>
+      <th class="col-sm-2 action"><%= t "subjects.fields.action" %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @user_subjects %>
+  </tbody>
+</table>

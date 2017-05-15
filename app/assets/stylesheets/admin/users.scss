@@ -1,0 +1,26 @@
+#users {
+  .tbl-user {
+    .name, .email, .role{
+      width: 25%;
+    }
+    .action {
+      width: 25%;
+      text-align: center;
+    }
+  }
+}
+
+.profile-form {
+  padding-left: 30px;
+  display: none;
+}
+
+.edit_user, .new_user {
+  .plus {
+    margin-top: 30px;
+  }
+
+  #user_profile_attributes_location_id {
+    width: 101%;
+  }
+}

@@ -1,0 +1,15 @@
+<%= render "shared/course_tab", course: @course, active_tab: Settings.tabs.subjects %>
+
+<div id="subjects">
+  <table class="table table-striped tbl-subject">
+    <thead>
+      <tr>
+        <th class="name"><%= t "subjects.fields.name" %></th>
+        <th class="description"><%= t "subject.fields.description" %></th>
+        <th class="content"><%= t "subject.fields.content" %></th>
+        <th class="during-time"><%= t "subjects.fields.during_time" %></th>
+      </tr>
+    </thead>
+    <%= render partial: "subject_list", collection: @course_subjects, as: :course_subject %>
+  </table>
+</div>

@@ -1,0 +1,6 @@
+en:
+  profiles:
+    columns:
+      ready_for_project:
+        ready: "Yes"
+        not_ready: "No"

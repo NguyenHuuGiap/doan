@@ -1,0 +1,21 @@
+<div id="list-subjects">
+  <div class="row">
+    <div class="col-md-12 title">
+      <span>
+        <%= link_to t("subjects.buttons.admin.new"),
+          new_admin_subject_path, class: "btn btn-success pull-right" %>
+      </span>
+    </div>
+  </div>
+  <table id="subjects" class="table table-bordered display" data-source="<%= admin_subjects_url(format: "json") %>" >
+    <thead>
+      <tr class="active">
+        <th></th>
+        <th class="subject-name"><%= t "subjects.fields.name" %></th>
+        <th><%= t "subjects.fields.description" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

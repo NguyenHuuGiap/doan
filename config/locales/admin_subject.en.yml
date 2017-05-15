@@ -1,0 +1,13 @@
+en:
+  admin:
+    actions:
+      show_subject:
+        start: "Start"
+        finish: "Finish"
+        reject: "Reject"
+        reopen: "Reopen"
+        start_all: "Start all"
+        finish_all: "Finish all"
+    confirms:
+      start_all: "Are you sure to start all subjects?"
+      finish_all: "Are you sure to finish all subjects?"

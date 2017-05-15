@@ -1,0 +1,9 @@
+en:
+  statuses:
+    table:
+      index: "Index"
+      name: "Name"
+      action: "Action"
+    panel:
+      new: "New Status"
+      edit: "Edit Status"

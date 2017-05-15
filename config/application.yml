@@ -1,0 +1,111 @@
+defaults: &defaults
+  default_email: "framgia.tms@gmail.com"
+  update_supervisor_params:
+    - supervisor
+    - leader
+  languages:
+    en: "en"
+    jp: "ja"
+  course:
+    init: 0
+  admin_user_course_image_size: "40x40"
+  flag_size: "20x15"
+  image_size_20: "20x20"
+  image_size_30: "30x30"
+  image_size_40: "40x40"
+  image_size_50: "50x50"
+  image_size_100: "100x100"
+  image_profile: "150x150"
+  image_size_200: "200x200"
+  finish: "finish"
+  finished: "finished"
+  date_format: "%H:%M:%S %-d %B %Y"
+  date_course_format: "%-d %B %Y"
+  course_subject:
+    finish: "finish"
+    start: "progress"
+  form:
+    field_size: 50
+    min_size: 30
+  position:
+    check_position: 0
+    index: 1
+  roles:
+    trainer: "trainer"
+    actions:
+      - "create"
+      - "read"
+      - "update"
+      - "destroy"
+  hours_working_day: 8
+  number_user_display: 4
+  number_member_show: 5
+  tabs:
+    overview: "overview"
+    subjects: "subjects"
+    trainees: "trainees"
+    trainers: "trainers"
+    course: "courses"
+    course_master: "course_masters"
+    evaluation_templete: "evaluation_templetes"
+    rank: "ranks"
+    evaluation: "evaluations"
+    university: "university"
+    status: "status"
+    type: "user_type"
+    user_profile: "User profiles"
+    user: "user"
+  default_password: 12345678
+  users:
+    tabs:
+      - inprogress_courses
+      - finished_courses
+      - activities
+  per_page: 10
+  chats:
+    chat_room_per_page: 20
+    message_per_page: 20
+
+  namespace_roles:
+    admin: "admin"
+    trainee: "trainee"
+    trainer: "trainer"
+  number_day_of_user_chart: 7
+  role_types:
+    admin: 0
+    trainer: 1
+    trainee: 2
+  evaluations:
+    min: 1
+  during_time:
+    course: 60
+    project_1: 10
+    project_2: 7
+    git_tutorial: 2
+    mysql: 2
+    tutorial_book: 10
+    javascript: 4
+  subject_status:
+    init: "init"
+    progress: "progress"
+    reject: "reject"
+    finish: "finish"
+    reopen: "reopen"
+  working_day:
+    min: 0.0
+    max: 5.0
+    step: 0.5
+  working_days: 44
+  status:
+    init: "init"
+    finished: "finished"
+    continue: "continue"
+development:
+  <<: *defaults
+  neat_setting: 800
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

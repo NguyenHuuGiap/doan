@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong><%= t "notes.note" %></strong>
+    <strong>
+      <%= link_to t("notes.add"), "#", data: {toggle: "modal", target: "#new-note-modal"},
+        class: "glyphicon glyphicon-plus glyphicon pull-right" %>
+    </strong>
+  </div>
+  <div class="panel-body">
+    <table class="table table-hover note-list">
+      <%= render partial: "admin/notes/note", collection: @notes %>
+    </table>
+  </div>
+</div>

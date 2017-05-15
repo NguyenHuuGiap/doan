@@ -1,0 +1,27 @@
+<%= form_for @test, html: {id: 'test_form'} do |f| %>
+  <ol>
+    <%= f.fields_for :results do |ff| %>
+      <li>
+        <%= ff.object.question.content %>
+        <ul style="list-style-type: none;" >
+          <% if ff.object.question.single?%>
+            <% ff.object.question.answers.each do |answer| %>
+              <li>
+                <%= ff.radio_button :answer_ids, answer.id %>
+                  <%= answer.content %>
+              </li>
+            <% end %>
+          <% else %>
+            <% ff.object.question.answers.each do |answer| %>
+              <li>
+                <%= ff.check_box :answer_ids, {multiple: true}, answer.id %>
+                  <%= answer.content %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+  <%= f.submit "submit", class: "btn btn-success pull-right" %>
+<% end %>

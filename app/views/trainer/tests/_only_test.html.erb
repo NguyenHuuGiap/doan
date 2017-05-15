@@ -1,0 +1,17 @@
+<td><%= l object.created_at %></td>
+<td><%= object.user_subject.subject.name %></td>
+<td>
+  <% if object.forward? %>
+    <%= link_to "Approver", trainer_test_path(object), remote: true, method: :put,
+      class: "btn-show-request btn btn-xs btn-default" %>
+  <% else %>
+    <%= object.status %>
+  <% end %>
+</td>
+<td></td>
+<td></td>
+<td><%= object.score %></td>
+<td>
+  <%= link_to "result", results_path(id_test: object.id),
+    class: "btn-show-request btn btn-xs btn-default" %>
+</td>

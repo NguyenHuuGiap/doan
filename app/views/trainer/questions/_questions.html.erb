@@ -1,0 +1,25 @@
+<tr>
+  <td>
+  1
+  </td>
+  <td><%= questions.content %></td>
+  <td><%= questions.level %></td>
+  <td><%= questions.subject.name %></td>
+  <td>
+    <%= l questions.created_at %>
+  </td>
+    <td class="text-center">
+      <div class="btn-group btn-group-xs">
+        <%= link_to trainer_question_path(questions), class: "btn btn-default" do %>
+          <i class="fa fa-eye"></i>
+        <% end %>
+        <%= link_to edit_trainer_question_path(questions), class: "btn btn-warning" do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+        <%= link_to trainer_question_path(questions),
+          method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure"} do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      </div>
+    </td>
+</tr>

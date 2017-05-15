@@ -1,0 +1,27 @@
+en:
+  evaluation:
+    table:
+      thead:
+        name: Name
+        point: Point
+      thread:
+        action: "Action"
+        current_rank: "Current Rank"
+        name: "Name"
+        total_point: Total Point
+  evaluation_template:
+    buttons:
+      new: "New"
+      create: "Create"
+      update: "Update"
+  layouts:
+    evaluation_template: "Evaluation Templates"
+    paths: "Paths"
+  notes:
+    title: "Notes"
+    dynamic_form:
+      add: "Add New Note"
+      remove: "Remove"
+  seach_user:
+    name_contain: "Name Contain: "
+  message-link-to-function: "Message Link To Funtion"

@@ -1,0 +1,17 @@
+<% activities.each do |activity| %>
+  <ul class="media-list">
+    <li class="media">
+      <div class="media-left">
+        <%= avatar_user_tag activity.owner, "img-circle ", Settings.image_size_30 %>
+      </div>
+      <div class="media-body">
+        <div><%= "#{activity.owner_name} #{activity.verb} #{activity.object_name}
+          #{activity.conjunction} #{activity.params} #{activity.recipient_name}".html_safe %></div>
+        <small class="text-muted">
+          <%= "#{activity.created_at.strftime Settings.date_format} |
+            #{time_ago_in_words activity.created_at}" %>
+        </small>
+      </div>
+    </li>
+  </ul>
+<% end %>

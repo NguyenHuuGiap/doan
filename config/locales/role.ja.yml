@@ -1,0 +1,21 @@
+ja:
+  roles:
+    layouts:
+        create_role: "ロールを作成します"
+        edit_role: "ロールを作成します"
+        allocate_permission: "許可を割り当てます"
+    table:
+        thread:
+            name: "名"
+            action: "アクション"
+    buttons:
+      admin:
+        create: "作ります"
+        edit: "編集"
+        update: "更新"
+        delete: "削除"
+        delete_confirm: "本気ですか"
+        assignuser: "ユーザーの割り当て"
+    create_role: "役割を作成します。"
+    no_role: "何の役割は表示されませんします"
+    name: "名"

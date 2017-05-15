@@ -1,0 +1,70 @@
+ja:
+  courses:
+    buttons:
+      admin:
+        create: "件名を作成します"
+        edit: "編集"
+        update: "更新"
+        delete: "削除"
+        delete_confirm: "本気ですか？"
+        start: "開始"
+        assigntrainee: "練習生の割り当て"
+        assigntrainer: "割り当てトレーナー"
+        assignusers: "ユーザーの割り当て"
+        finish: "仕上げ"
+        finished: "完成しました"
+        create_course: "コースを作成します"
+    create_course: "コースを作成"
+    no_course: "求償権は表示されませんします"
+    course_masters: "コースマスターズ"
+    start_date: "開始日"
+    end_date: "終了日"
+
+    status:
+        new: "新しい"
+    tabs:
+      overview: "概要"
+      subjects: "科目"
+      trainees: "研修生"
+      trainers: "トレーナー"
+      course: "コース"
+      course_master: "コースのマスター"
+    labels:
+      about_course: "コース"
+      description: "説明"
+      subject: "テーマ : "
+      task: "仕事 : "
+      members: "メンバー"
+      trainers: "トレーナー : "
+      trainees: "研修生 : "
+      name: "名"
+      description: "説明"
+      status:
+        new: "新しい"
+        progress: "進捗"
+        finish: "仕上げ"
+    users:
+      name: "名"
+      email: "Eメール"
+    breadcum:
+      home: "ホーム"
+      courses: "コース"
+    user_subject_status:
+      init: "初期"
+      progress: "進行中"
+      finish: "完成"
+    day: "日"
+    view_detail: "詳細を見る"
+    course_complete: "コース完成"
+    document: "資料"
+    document_name: "文書名"
+    document_remove: "取り除く"
+    time: "コースの時間は％に ％{start_date} からである %{end_date}"
+    confirms:
+      confirm_clone: "あなたはこのコースをクローンしますか？"
+      clone_success: "クローン成功"
+      not_save: "保存しません"
+      save: "セーブ"
+      confirm_start: "あなたはこのコースを開始しますか？"
+      confirm_finish: "あなたはこのコースを終了しますか？"
+      confirm_reopen: "あなたはこのコースを再開しますか？"

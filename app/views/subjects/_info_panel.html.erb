@@ -1,0 +1,34 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="label box-title">
+      <%= t "subjects.members" %>
+      <span class="badge label-primary"><%= @users.size %></span>
+    </h3>
+  </div>
+  <div class="box-body no-padding">
+    <%= render "shared/member_panel" %>
+  </div>
+</div>
+
+<div class="card">
+  <div id="image-course">
+    <%= set_image @user_subject, Settings.image_size_200 %>
+  </div><br>
+  <div class="task-infor">
+    <%= render "task_statistic" %>
+  </div>
+</div>
+
+<div class="sector-content">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="label box-title"><%= t "subjects.note" %></h3>
+    </div>
+    <div class="box-body">
+      <div class="subject-note">
+        <p><%= t "subjects.note_during_time", during_time: @subject.during_time %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: "shared/documents", locals: {documents: @subject.documents} %>

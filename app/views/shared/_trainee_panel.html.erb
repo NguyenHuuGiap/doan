@@ -1,0 +1,8 @@
+<%= link_to "#", data: {toggle: "modal", target: "#trainee-modal"},
+  title: t("subjects.modal.member_details") do %>
+  <% if the_rest_member > 0 %>
+    <div class="col-xs-6">
+      <div class="plus-node"><%= "+#{the_rest_member}" %></div>
+    </div>
+  <% end %>
+<% end %>

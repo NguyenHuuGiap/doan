@@ -1,0 +1,37 @@
+<h2 class="label"><%= t "subjects.about_trainer" %></h2>
+<div id="teaching-assistants">
+  <ul class="list list--object list--object--m">
+    <% @trainers.each do |trainer| %>
+      <li class="list-item">
+        <div class="bucket-media dn db--m">
+          <div class="badge img-circle">
+            <%= avatar_user_tag trainer, "img-circle",
+              Settings.image_size_100 %>
+          </div>
+        </div>
+        <p class="tau tsxs">
+          <strong><%= link_to trainer.name, "#" %></strong>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<h2 class="label"><%= t "subjects.about_trainee" %></h2>
+<div id="teaching-assistants">
+  <ul class="list list--object list--object--m">
+    <% @trainees.each do |trainee| %>
+      <li class="list-item">
+        <div class="bucket-media dn db--m">
+          <div class="badge img-circle">
+            <%= avatar_user_tag trainee, "img-circle",
+              Settings.image_size_100 %>
+          </div>
+        </div>
+        <p class="tau tsxs">
+          <strong><%= link_to trainee.name, "#" %></strong>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

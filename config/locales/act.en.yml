@@ -1,0 +1,12 @@
+en:
+  activity:
+    finish_course: "has finished course "
+    reopen_course: "has reopened course "
+    start_course: "has started course "
+    start_subject: "has started subject"
+    finish_subject: "has finished subject"
+    start_all_subject: "has started all user subjects"
+    finish_all_subject: "has finished all user subjects"
+    change_status: "has updated"
+    for_subject: "for"
+    in_subject: "in subject"

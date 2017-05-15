@@ -1,0 +1,54 @@
+<table class="table" id="sortable">
+  <tbody class="sortable-table">
+    <% @supports.course_subjects.each do |course_subject| %>
+      <tr data-item-id=<%= course_subject.id %>
+        data-url=<%= trainer_course_course_subject_path course_subject.course, course_subject %>
+        class="item">
+        <td>
+          <div class="subject row">
+            <%= link_to trainer_course_subject_path(@course,
+              course_subject.subject) do %>
+              <div class="col-xs-2 subject-image">
+                <%= set_image course_subject %>
+              </div>
+              <div class="col-xs-8 infor">
+                <div>
+                  <span class="subject-name">
+                    <%= course_subject.subject_name %>
+                  </span>&nbsp;
+                  <span><i><%= course_subject.subject.during_time %>
+                    <%= t "user_subjects.labels.days" %></i>
+                  </span>&nbsp;&nbsp;
+                  <span class="label-status
+                    <%= set_background_color_status_subject course_subject
+                      .user_subjects %>">
+                    <%= status_subject course_subject.user_subjects  %>
+                  </span>
+                </div>
+                <div><%= truncate course_subject.subject_description,
+                  length: 110 %></div>
+              </div>
+            <% end %>
+            <div class="col-xs-2 info-panel">
+              <% course_subject.user_subjects.progress.includes(:user)
+                .each.with_index 1 do |user_subject, index| %>
+                <% if index <= Settings.number_member_show %>
+                  <div class="col-xs-6">
+                    <%= link_to [:trainer, user_subject.user],
+                      title: user_subject.user.name do %>
+                      <%= avatar_user_tag user_subject.user,
+                        "profile-user img-circle", Settings.image_size_30 %>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+              <%= render "shared/trainee_panel", the_rest_member:
+                the_rest_member(course_subject.user_subjects) %>
+            </div>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= render "shared/trainee_modal" %>

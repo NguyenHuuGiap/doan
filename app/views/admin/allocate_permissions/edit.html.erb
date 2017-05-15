@@ -1,0 +1,39 @@
+<%= form_for @role, url: admin_role_allocate_permissions_path, method: :patch do |f| %>
+  <%= render "shared/error_messages", object: @role %>
+  <div class="row">
+    <div class="col-md-1 title"><%= @role.name.capitalize %></div>
+    <div class="col-md-1 col-md-offset-8"><%= f.submit t("button.save"),
+      class: "btn btn-primary"%></div>
+  </div>
+
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <% Settings.roles.actions.each do |action| %>
+        <th><%= action.capitalize %></th>
+      <% end %>
+      <th>
+        <%= check_box_tag "select-permission-all", "select-all", false %>
+        <label for="select-permission-all"><%= t "roles.select_all" %></label>
+      </th>
+    </tr>
+    <% $model_classes.each do |model_class| %>
+      <tr>
+        <td><%= model_class %></td>
+
+        <% Settings.roles.actions.each do |action| %>
+          <%= f.fields_for :permissions, @role.permissions.build do |builder| %>
+            <%= builder.hidden_field :id, value: @role.decorate.permission(action,
+              model_class) %>
+            <%= builder.hidden_field :model_class, value: model_class.name %>
+            <%= builder.hidden_field :action, value: action %>
+            <td>
+              <%= builder.check_box :_destroy, {checked: @role.decorate.permission(action,
+                model_class).present?}, false, true %>
+            </td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-2">
+    <%= set_image @course_subject %>
+  </div>
+  <div class="col-md-5">
+    <h2 id="subject-h2-header">
+      <span id="subject-header"><%= @course_subject.subject_name %></span>
+    </h2>
+    <div>
+      <i><%= @course_subject.subject_description %></i>
+    </div>
+    <p class="working-days">
+      <%= "#{t "subjects.fields.during_time"}:
+        #{@subject.during_time} #{t "subjects.fields.days"}" %>
+    </p>
+  </div>
+  <div class="box-divider col-md-4">
+    <div class="label-title"><%= t "user_tasks.description" %></div>
+    <p><%= @course_subject.subject_content.html_safe if @course_subject.subject_content %></p>
+  </div>
+  <div class="col-md-1">
+    <%= render "shared/action_user_subjects" %>
+  </div>
+</div>
+<% if data_finish_task @user_tasks_chart_data %>
+  <div id="user-subjects-charts"
+    data-user-name="<%= @user_tasks_chart_data.keys %>"
+    data-total-number-tasks="<%= @user_tasks_chart_data.values %>">
+  </div>
+<% end %>
+<br>

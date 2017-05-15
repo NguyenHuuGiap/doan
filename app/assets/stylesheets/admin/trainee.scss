@@ -1,0 +1,20 @@
+#trainees {
+  .tbl-trainee {
+    .no {
+      width: 5%;
+    }
+
+    .name {
+      width: 20%;
+    }
+
+    .email {
+      width: 40%;
+    }
+  }
+
+  #assign-user {
+    height: 400px;
+    overflow: auto;
+  }
+}

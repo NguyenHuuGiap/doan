@@ -1,0 +1,15 @@
+en:
+  user_subjects:
+    statuses:
+      init: "New"
+      progress: "Progress"
+      finish: "Finish"
+      waiting: "Waiting finish"
+    labels:
+      days: "days"
+    chart:
+      title: "Trainee progress"
+      task_total: "Total finished tasks"
+      y_axis: "Number tasks"
+    notifications:
+      user: " by %{user}"

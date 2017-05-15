@@ -1,0 +1,1 @@
+$(".number-notification").html("");

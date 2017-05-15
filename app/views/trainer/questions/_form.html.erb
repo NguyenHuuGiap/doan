@@ -1,0 +1,46 @@
+<%= form_for [:trainer, @question] do |f| %>
+  <div class="form-group row">
+    <%= f.label "question content",
+    class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label "Select Subject",
+      class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-8">
+      <%= f.select :subject_id, options_for_select(@subjects.collect{
+        |subject| [subject.name, subject.id]}),
+        class: "btn btn-default filter-categories" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label "Select question type:",
+      class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-8">
+      <%= f.radio_button :level,  "multiple",
+        :checked => true %>
+      <%= "multiple correct answers" %>
+      <%= f.radio_button :level,  "single" %>
+      <%= "single correct answers" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.fields_for :answers do |answer_builder| %>
+      <%= render "answer_fields", f: answer_builder %>
+    <% end %>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-8">
+      <%= link_to_add_fields t("question_admin.add_answer"),
+        f, :answers %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-sm-2 col-sm-8">
+      <%= f.submit "Save Submit",
+        class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

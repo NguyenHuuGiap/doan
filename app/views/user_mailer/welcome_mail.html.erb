@@ -1,0 +1,5 @@
+<h1><%= t "user_mailer.welcome_mail.subject" %></h1>
+<p><%= t "user_mailer.hello", name: @content[:name] %></p>
+<p><%= t "user_mailer.welcome_mail.content" %></p>
+<p><h4><%= t "user_mailer.welcome_mail.user_name", email: @content[:email] %></h4></p>
+<p><h4><%= t "user_mailer.welcome_mail.password", password: @content[:password] %></h4></p>

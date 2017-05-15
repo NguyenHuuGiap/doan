@@ -1,0 +1,16 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="label box-title"><%= t "document.name" %></h3>
+  </div>
+  <div class="box-body no-padding">
+    <ul class="doc-field">
+      <% documents.each do |doc| %>
+        <li>
+          <%= link_to doc.content.url, target: "_blank" do %>
+            <abbr title="<%= doc.description %>"><%= doc.name %></abbr>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

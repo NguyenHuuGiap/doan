@@ -1,0 +1,18 @@
+.form-header {
+  background-color: #5cb85c;
+  color:white;
+  text-align: center;
+  padding:25px 30px;
+}
+
+.input-group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}

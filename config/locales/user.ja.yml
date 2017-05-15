@@ -1,0 +1,25 @@
+ja:
+  user:
+    login: "ログイン"
+    edit_profile: "プロファイル編集"
+    fields:
+      name: "名前"
+      email: "メール"
+      password: "パスワード"
+    place_holder:
+      password_confirmation: "確認パスワード"
+    action:
+      edit: "編集"
+    profile:
+      name: "名前: "
+      email: "メール: "
+  signins:
+    banner: "ログインしてください"
+    remember: "私を覚えてますか"
+  member: "一員"
+  buttons:
+    submit: "提出します"
+    save: "セーブ"
+    new: "新しい"
+  table:
+    role: "役割"

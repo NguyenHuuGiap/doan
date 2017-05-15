@@ -1,0 +1,72 @@
+en:
+  subjects:
+    image: "Image"
+    documents: "Documents: "
+    dynamic_form:
+      add: "Add task master"
+      remove: "Remove"
+    buttons:
+      trainer:
+        new: "New"
+      admin:
+        new: "New"
+        create: "Create"
+        update: "Update"
+        delete_confirm: "Are you sure"
+    about_subject: "Subject"
+    create_subject: "Create new subject"
+    subject_name: "Name Subject"
+    subject_description: "Description"
+    subject_content: "Content"
+    edit_subject: "Edit subject"
+    fields:
+      name: "Name"
+      description: "Description"
+      during_time: "Working day"
+      days: "(days)"
+      start_date: "Start date"
+      end_date: "End date"
+      user_end_date: "User end date"
+      progress: "Progress"
+      action: "Action"
+      status: "Status"
+    submit:
+      create_task: "Create"
+    task:
+      new_task: "New task"
+      list_tasks: "List tasks"
+      update: "Update Task"
+      finish: "Finish"
+    form:
+      input_subject_name: "Enter subject name..."
+      input_subject_description: "Enter subject description..."
+      input_subject_during_time: "Enter subject during-time(days)..."
+    description: "Subject Description"
+    content: "Subject Content"
+    task_overview: "Task Overview"
+    about_trainer: "About Trainer"
+    about_trainee: "About Trainee"
+    note: "Subject Notes"
+    members: "Members"
+    content: "Content"
+    during_time: "During Time"
+    note_during_time: "This subject should take approximately %{during_time} days."
+    document: "Add Document"
+    document_name: "Name"
+    document_url: "Document Url"
+    document_remove: "Remove"
+    modal:
+      member_details: "Member details"
+      trainees: "Trainees"
+      trainers: "Trainers"
+    new_task: New Task
+    init_subjects: "New subjects:"
+    progress_subjects: "Inprogress subjects:"
+    finish_subjects: "Finished subjects:"
+    tasks:
+      in_progress_tasks: "Inprogress tasks:"
+      finished_tasks: "Finished tasks:"
+  subject:
+    fields:
+      content: "Content"
+      description: "Description"

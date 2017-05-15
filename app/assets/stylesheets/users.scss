@@ -1,0 +1,76 @@
+.user-profile {
+  background: white;
+  padding-top: 20px;
+
+  .profile-image {
+    margin-left: 10px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .info {
+    margin-top: 27px;
+  }
+
+  .media-list {
+    margin-left: 20px;
+  }
+
+  .media-left {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .timeline-title {
+    padding: 5px 10px;
+  }
+
+  .timeline-header {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+}
+
+.finished_course {
+  dt, dd {
+    padding: 3px;
+    strong {
+      float: left;
+    }
+  }
+}
+
+.list_special .list-group-item:first-child {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top: 0;
+}
+
+.activities {
+  margin-top: 20px;
+}
+
+.edit-user {
+  margin: 10px;
+  padding-bottom: 30px;
+  border: 1px solid #eaeaea;
+}
+
+.btn-create-and-continue {
+  margin-left: 10px;
+}
+
+.progress {
+  margin: 4px auto;
+}
+
+#location_user_id {
+  margin-top: 10px;
+}
+
+input.date-edit {
+  border: 1px solid #d2d6de;
+  height: 27px;
+  padding-left: 7px;
+}

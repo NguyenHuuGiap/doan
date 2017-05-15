@@ -1,0 +1,9 @@
+ja:
+  user_subjects:
+    fields:
+      status: "状態"
+      name: "名"
+      estimate_time: "見積もり時間"
+      spent_time: "費やした時間"
+      progress: "進捗"
+    labels: "コンテンツ"

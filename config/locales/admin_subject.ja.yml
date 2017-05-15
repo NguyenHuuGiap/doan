@@ -1,0 +1,27 @@
+ja:
+  admin:
+    subject:
+      name: "名前"
+      description: "説明"
+      tasks: "タスク"
+      name_task: "名前"
+      description_task: "説明"
+      save: " セーブ"
+      labels:
+          show: "表示"
+          user_list: "ユーザーリスト"
+      flashes:
+        update: "更新しました"
+        not_update: "更新されません"
+    actions:
+      show_subject:
+        title: "%{object_label}"
+        menu: "ショー"
+        breadcrumb: "%{object_label}"
+        start: "開始"
+        finish: "仕上げ"
+        start_all: "すべての起動"
+        finish_all: "すべて終えます"
+    confirms:
+      start_all: "あなたはすべての科目を開始しますか？"
+      finish_all: "あなたはすべての科目を終了しますか？"

@@ -1,0 +1,30 @@
+<% provide :title, @user.name %>
+<div class="row user-profile">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render "profile" %>
+      </div>
+
+      <div class="col-md-9">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs">
+            <% Settings.users.tabs.each_with_index do |tab, index| %>
+              <li class="<%= 'active' if index == 0 %>">
+                <a href="#<%= tab %>" data-toggle="tab">
+                  <%= t "user.tabs.#{tab}" %>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+
+          <div class="tab-content">
+            <%= render "activities_tab" %>
+            <%= render "finished_courses_tab" %>
+            <%= render "inprogress_courses_tab" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

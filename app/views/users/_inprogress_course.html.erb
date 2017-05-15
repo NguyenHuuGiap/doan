@@ -1,0 +1,28 @@
+<%= render "course", course: course %>
+
+<% @user_subjects.each do |user_subject| %>
+  <div class="course_subject">
+    <div class="subject_title">
+      <dl class="dl-horizontal">
+        <dt><strong><%= user_subject.course_subject.subject.name %></strong></dt>
+        <dd>
+          <span class="label label-<%= user_subject.finish? ? "success" : "info"%>">
+            <%= user_subject.finish? ? t("status.finished") : t("status.progress") %>
+          </span>
+        </dd>
+      </dl>
+    </div>
+    <% user_subject.user_tasks.each do |user_task| %>
+      <dl class="dl-horizontal">
+        <dt><strong><%= user_task.task.decorate.display_name %></strong></dt>
+        <dd>
+          <span class="label label-<%= user_task.persisted? ? "success"
+            : "default"%> full-right">
+            <%= user_task.persisted? ? t("status.finished") :
+              t("status.start") %>
+          </span>
+        </dd>
+      </dl>
+    <% end %>
+  </div>
+<% end %>

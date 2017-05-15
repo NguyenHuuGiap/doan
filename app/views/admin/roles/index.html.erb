@@ -1,0 +1,22 @@
+<div id="roles" class="systems-active">
+  <div class="row">
+    <div class="col-md-12 title">
+      <span>
+        <%= link_to t("roles.buttons.admin.new"),
+            new_admin_role_path, class: "btn btn-success pull-right" %>
+      </span>
+    </div>
+  </div>
+  <table id="role-tbl" class="table table-bordered display" data-source="<%= admin_roles_url(format: "json") %>" >
+    <thead>
+      <tr class="active">
+        <th></th>
+        <th ><%= t "roles.table.thread.name" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

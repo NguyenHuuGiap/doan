@@ -1,0 +1,183 @@
+#courses {
+  .ion-android-person-add {
+    font-size: 25px;
+  }
+  .course-show {
+    .btn--b {
+      display: inline-block;
+      width: 100px;
+      font-family: "Open Sans",Helvetica,Arial,sans-serif;
+      font-weight: 600;
+    }
+
+    .label {
+      color: #999;
+      font-size: 90%;
+      font-weight: 600;
+      letter-spacing: 0.0125em;
+      margin-bottom: 1.25em;
+    }
+
+    .profile-user {
+      height: 32px;
+      width: 32px;
+    }
+    .trainer-profile {
+      height: 40px;
+      width: 40px;
+    }
+
+    li {
+      list-style-type: none;
+      .course-subject-body {
+        padding: 10px;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        border-radius: 3px;
+        background: #fff;
+        color: #444;
+        .timeline-header {
+          color: #555;
+          border-bottom: 1px solid #f4f4f4;
+          padding: 10px;
+          font-size: 16px;
+          line-height: 1.1;
+        }
+      }
+    }
+
+    hr {
+      border-top: 1px solid #DDD;
+      margin-left: 35px;
+    }
+    .label-user {
+      padding-top: 5px;
+    }
+    h3 {
+      margin-top: 0;
+    }
+
+    .course-subject-body {
+      background-color: white;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .course-subject {
+      margin-top: 5px;
+    }
+
+    #course-h2-header {
+      color: #575a5b;
+      font-family: "Open Sans",Helvetica,Arial,sans-serif;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 0.3125em;
+      margin-top: 0;
+      padding-left: 1.5%;
+    }
+    p {
+      padding-right: 2%;
+      padding-left: 1.5%;
+    }
+    .course-breadcrumb {
+      padding-right: 2%;
+      padding-left: 1.2%;
+    }
+    .timeline-footer {
+      margin-top: 10px;
+    }
+    .user-info {
+      padding-top: 50px;
+      .li {
+        list-style-type: none;
+      }
+    }
+  }
+  .tbl-course {
+    .name {
+      width: 20%;
+    }
+    .avatar {
+      width: 10%;
+    }
+    .description {
+      width: 20%
+    }
+    .content {
+      width: 30%
+    }
+    .start-date, .end-date{
+      width: 10%
+      }
+  }
+  margin-right: 10px;
+
+  .course-description, .course-content {
+    text-align: left;
+  }
+
+  #course-header {
+    margin-left: 0.2%;
+    padding-right: 10px;
+  }
+
+  #course-tbl {
+    .profile-user {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    img {
+      vertical-align: initial;
+    }
+  }
+
+  #course-tbl_wrapper {
+    .filter-status {
+      select {
+        float: right;
+        width: 100px;
+      }
+    }
+  }
+
+  .subject {
+    background-color: white;
+    padding: 5px 8px;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+    margin: 0px;
+  }
+
+  .subject-image {
+    padding: 0px;
+  }
+
+  .subject-name {
+    font-size: 20px;
+    color: #21abc7;
+    font-weight: 300;
+    margin: 4px 0px;
+  }
+
+  tr {
+    td {
+      border: none;
+    }
+  }
+
+  #sortable {
+    .sortable-table {
+      overflow: auto;
+    }
+  }
+}
+
+.list-subjects{
+  line-height: 2;
+  label {
+    font-weight: normal !important;
+  }
+}

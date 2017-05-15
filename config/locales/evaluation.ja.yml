@@ -1,0 +1,13 @@
+ja:
+  table:
+    thead:
+      name: "名"
+      min_point: "最小のポイント"
+      max_point: "最大の"
+  evaluation_template:
+    buttons:
+      new: "新しい"
+      create: "作ります"
+      update: "更新"
+  layouts:
+    evaluation_template: "評価テンプレート"

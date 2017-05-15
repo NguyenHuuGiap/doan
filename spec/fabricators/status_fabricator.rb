@@ -1,0 +1,2 @@
+Fabricator(:status) do
+end

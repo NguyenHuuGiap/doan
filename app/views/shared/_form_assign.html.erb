@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <table id="tbl-assign-user" class="table table-hover">
+      <thead>
+        <th class="assign-checkbox"></th>
+        <th><%= t "courses.users.name" %></th>
+        <th><%= t "courses.users.email" %></th>
+      </thead>
+      <tbody>
+        <%= render partial: "shared/assign_user_row",
+          locals: {f: f, assigned_user_ids: assigned_user_ids,
+          user_courses_handler: user_courses_handler} %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-1 col-md-offset-11">
+  <%= f.submit :save, class: "btn btn-primary pull-right" %>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+<li class="list-group-item finished_course">
+  <dl class="dl-horizontal">
+    <dt><strong><%= t "courses.name" %></strong></dt>
+    <dd><%= link_to user_course.course_name, @namespace == Settings.namespace_roles.trainee ?
+      user_course_path(user_course) :
+      eval("#{@namespace}_course_path(user_course.course)") %></dd>
+    <dt><strong><%= t "courses.description" %></strong></dt>
+    <dd><%= user_course.course_description %></dd>
+
+    <dt><strong><%= t "courses.status" %></strong></dt>
+    <dd><%= user_course.course_status %></dd>
+
+    <dt><strong><%= t "courses.start_date" %></strong></dt>
+    <dd>
+      <span class="text-muted">
+        <%= l user_course.course_start_date, format: :default %>
+      </span>
+    </dd>
+
+    <dt><strong><%= t "courses.end_date" %></strong></dt>
+    <dd>
+      <span class="text-muted">
+        <%= l user_course.course_end_date, format: :default %>
+      </span>
+    </dd>
+  </dl>
+</li>

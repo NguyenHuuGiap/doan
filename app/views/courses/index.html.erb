@@ -1,0 +1,47 @@
+<% provide :title, t("layouts.all_courses") %>
+
+<div id="user-course-index">
+  <div class="breadcrumb-bar">
+    <ul class="list breadcrumb">
+      <li>
+        <%= link_to root_url do %>
+          <i class="glyphicon glyphicon-th-list"></i>
+          <%= t "layouts.paths" %>
+        <% end %>
+      </li>
+      <li class="active"><%= t "layouts.all_courses" %></li>
+    </ul>
+  </div>
+  <div class="row">
+    <% if @user_courses.size > 0 %>
+      <% @user_courses.each do |user_course| %>
+        <div class="col-md-6">
+          <div class="card">
+            <a href="<%= user_course_path user_course %>">
+              <div class="bucket">
+                <div class="bucket-media">
+                  <div class="badge">
+                    <%= image_course_tag user_course.course,
+                      user_course.course_programming_language_name %>
+                  </div>
+                </div>
+                <div class="bucket-content">
+                    <span class="course-name">
+                      <%= truncate user_course.course_name, length: 20 %>
+                    </span>
+                    <span class="label-status
+                      <%= set_background_color_status user_course.course_status %>">
+                      <%= user_course.course.status.humanize %>
+                    </span>
+                  <p class="course-description">
+                    <%= truncate user_course.course_description, length: 129 %>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

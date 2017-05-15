@@ -1,0 +1,15 @@
+.dataTables_wrapper {
+  select {
+    height: auto;
+  }
+  .dataTables_paginate, .dataTables_length {
+    text-align: right;
+  }
+  .dataTables_filter {
+    text-align: left;
+    input {
+      width: 150%;
+      margin-left: 0;
+    }
+  }
+}

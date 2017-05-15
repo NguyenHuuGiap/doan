@@ -1,0 +1,6 @@
+ja:
+  user_tasks:
+    statuses:
+      init: "その中に"
+      in_progress: "進行中"
+      finished: "仕上げ"

@@ -1,0 +1,63 @@
+#user-subject {
+  .working-days {
+    padding-top: 5px;
+    color: #D02421;
+  }
+
+  .btn-status {
+    height: 23px;
+    width: 50px;
+    padding: 0px;
+    border-radius: 1px;
+  }
+
+  .button-save {
+    background-color: transparent;
+    border: none;
+    color: blue;
+  }
+
+  .progress {
+    margin-top: 0px;
+  }
+
+  table {
+    .action {
+      text-align: center;
+    }
+
+    th {
+      background-color: #F3F3F3;
+    }
+  }
+
+  #user-subjects-charts {
+    margin-top: 20px;
+  }
+
+  .user-lists {
+    .user-name {
+      .btn-reopen {
+        display: none;
+      }
+      .reopen-img {
+        width: 17px;
+        height: 17px;
+      }
+    }
+    .user-name:hover {
+      .btn-reopen {
+        display: inline !important;
+      }
+    }
+  }
+}
+.user-task-info {
+  .show-task {
+    display: table-row !important;
+  }
+}
+
+h2#subject-h2-header {
+  margin-top: 0;
+}

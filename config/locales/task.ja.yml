@@ -1,0 +1,9 @@
+ja:
+  tasks:
+    spent_time: "費やした時間"
+    hours: "営業時間"
+    estimate_time: "予定時刻"
+    update: "更新"
+    redmine_task_id: "RedmineのタスクID"
+    progress: "プログレス"
+    edit: "編集タスク"

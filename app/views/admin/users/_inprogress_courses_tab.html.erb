@@ -1,0 +1,30 @@
+<div class="active tab-pane" id="inprogress_courses">
+  <% if @inprogress_course %>
+    <%= render "users/course", user_course: @inprogress_course %>
+    <br>
+    <ul class="timeline timeline-inverse">
+      <% @user_subjects.each do |user_subject| %>
+        <li>
+          <i class="fa <%= set_background_color_status user_subject.status %>"
+            title="<%= t "user_subjects.statuses.#{user_subject.status}" %>"></i>
+          <% if user_subject.init? %>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <%= link_to user_subject.subject.name,
+                  [:admin, @inprogress_course.course, user_subject.subject] %>
+              </div>
+            </div>
+          <% else %>
+            <%= render "admin/users/user_subject", user_subject: user_subject %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text text-danger">
+      <%= t "user.titles.not_learn_any_course",
+        user_name: current_user?(@user) ? t("user.titles.me") :
+        @user.name %>
+    </p>
+  <% end %>
+</div>

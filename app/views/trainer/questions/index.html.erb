@@ -1,0 +1,22 @@
+<div class="row manage_user">
+  <div class="col-md-12">
+    <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="active">
+          <th><%= t ".index" %></th>
+          <th><%= "Question Content" %></th>
+          <th><%= "Level" %></th>
+          <th><%= "Subject Name" %></th>
+          <th><%= "Created At" %>
+          <th class="text-center"><%= t "action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render(partial: "questions", collection: @questions) || t(".data_not_find") %>
+      </tbody>
+    </table>
+    </div>
+    <center></center>
+  </div>
+</div>

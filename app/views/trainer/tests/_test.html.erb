@@ -1,0 +1,7 @@
+<%  if objects %>
+  <% objects.each do |object| %>
+    <tr id="test-<%= object.id %>">
+        <%= render partial: "trainer/tests/only_test", locals: {object: object} %>
+    </tr>
+  <% end %>
+<% end %>

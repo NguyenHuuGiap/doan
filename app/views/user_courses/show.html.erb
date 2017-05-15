@@ -1,0 +1,84 @@
+<% provide :title, @course.name %>
+
+<div id="user-course-show" class="row">
+  <div class="col-md-9">
+    <div class="breadcrumb-bar">
+      <ul class="breadcrumb">
+        <li>
+          <%= link_to root_url do %>
+            <i class="glyphicon glyphicon-th-list"></i>
+            <%= t "layouts.paths" %>
+          <% end %>
+        </li>
+        <li><%= link_to t("layouts.all_courses"), courses_path %></li>
+        <li class="active"><%= @course.name %></li>
+      </ul>
+    </div>
+
+    <span class="header-title"><%= @course.name %></span>
+
+    <span class="label-status <%= set_background_color_status @course.status %>">
+      <%= t "courses.labels.status.#{@course.status}" %>
+    </span>
+
+    <div class="description"><%= @course.description %></div>
+
+    <div class="subject-list">
+      <% @user_subjects.each_with_index do |user_subject, index| %>
+        <div class="col-xs-1">
+          <%= link_to user_course_subject_path(@user_course, user_subject.subject),
+            title: t("user_subjects.statuses.#{user_subject.status}") do %>
+            <% if index == 0 %>
+              <div class="node <%= set_background_color_status user_subject.status %>"></div>
+            <% else %>
+              <div class="node node--connected
+                <%= set_background_color_status user_subject.status %>"></div>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <%= form_for user_subject.tests.new , html: {class: "form-inline"} do |f| %>
+            <%= f.hidden_field :user_subject, value: user_subject.id %>
+            <%= f.submit "Create Test", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <%= link_to user_course_subject_path(@user_course, user_subject.subject) do %>
+          <div class="subject col-xs-11 row">
+            <div class="col-xs-2 subject-image">
+              <%= set_image user_subject %>
+            </div>
+            <div class="col-xs-10 infor">
+              <div>
+                <span class="subject-name">
+                  <%= user_subject.name %>
+                </span>&nbsp;
+                <span>
+                  <i>
+                    <%= "#{user_subject.during_time} "%>
+                    <%= t("user_subjects.labels.days") %>
+                  </i>
+                </span>
+                <span>
+                </span>
+              </div>
+              <div>
+                <%= t "subjects.start_date",
+                  start_date: user_subject.start_date if
+                  user_subject.start_date.present? %>
+              </div>
+              <div><%= truncate(user_subject.description, length: 110) %></div>
+            </div>
+          </div>
+        <% end %>
+        <div>
+
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-3 info-panel">
+    <%= render "info_panel" %>
+  </div>
+</div>
+<%= render "shared/member_modal" %>

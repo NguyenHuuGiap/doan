@@ -1,0 +1,53 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require custom
+ *= require status_color
+ *= require datatable
+ *= require sign_in
+ *= require users
+ *= require courses
+ *= require tasks
+ *= require admin/course
+ *= require admin/courses
+ *= require admin/subject
+ *= require admin/user_subjects
+ *= require admin/rank
+ *= require admin/trainee
+ *= require admin/roles
+ *= require admin/evaluation_template
+ *= require admin/task
+ *= require admin/evaluation
+ *= require admin/programming_language
+ *= require admin/status
+ *= require admin/profile
+ *= require admin/types
+ *= require admin/universities
+ *= require admin/users
+ *= require admin/notes
+ *= require admin/assign_user
+ *= require bootstrap-datepicker3
+ *= require admin/AdminLTE.min
+ *= require admin/all-skins.min
+ *= require admin/location
+ *= require user_courses
+ *= require footer
+ *= require subject
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require chat_layout
+ *= require admin/organization_charts
+ *= require growl
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

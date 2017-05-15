@@ -1,0 +1,40 @@
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="label box-title"><%= t "subjects.members" %></h3>
+    <span class="badge label-primary"><%= @users.size %></span>
+  </div>
+  <div class="box-body no-padding">
+    <%= render "shared/member_panel" %>
+  </div>
+</div>
+
+<div class="card">
+  <div id="image-course">
+    <%= image_course_tag @course, @course.programming_language_name, Settings.image_size_200 %>
+  </div>
+  <div class="course-infor">
+    <% @user_subject_statuses.each do |key, value| %>
+      <div class="status">
+        <i class="fa fa-circle <%= set_color_status key %>"
+          aria-hidden="true"></i> &nbsp;
+        <%= t "subjects.#{key}_subjects" %>
+        <%= instance_variable_get "@number_of_user_subject_#{key}" %>/
+        <%= @number_of_user_subjects %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="sector-content">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="label box-title"><%= t "courses.note" %></h3>
+    </div>
+    <div class="box-body">
+      <div class="subject-note">
+        <%= t "courses.time", start_date: @course.start_date, end_date: @course.end_date %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: "shared/documents", locals: {documents: @course.documents} %>

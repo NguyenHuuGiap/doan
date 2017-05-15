@@ -1,0 +1,9 @@
+ja:
+  statuses:
+    table:
+      index: "インデックスx"
+      name: "名"
+      action: "アクション"
+    panel:
+      new: "新しいステータス"
+      edit: "編集ステータス"

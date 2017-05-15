@@ -1,0 +1,71 @@
+<% provide :title, @user_subject.subject_name %>
+
+<div id="subject-show">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="breadcrumb-bar">
+        <ul class="list breadcrumb">
+          <li>
+            <%= link_to root_url do %>
+              <i class="glyphicon glyphicon-th-list"></i>
+              <%= t "layouts.paths" %>
+            <% end %>
+          </li>
+          <li><%= link_to t("layouts.all_courses"), courses_path %></li>
+          <li><%= link_to @user_subject.course_name,
+            user_course_path(@user_subject.user_course) %></li>
+          <li class="active"><%= @user_subject.name %></li>
+        </ul>
+      </div>
+
+      <div class="subject-overview">
+        <span class="header-title">
+          <%= @user_subject.name %>
+        </span>
+        <span class="label-status <%= set_background_color_status @user_subject.status %>">
+          <%= t "courses.labels.status.#{@user_subject.status}" %>
+        </span>
+        <%= link_to t("subjects.task.finish"), user_subject_path(@user_subject),
+          method: :put, data: {confirm: t("subjects.buttons.admin.delete_confirm")},
+          class: "btn-finish pull-right" if current_user.is_trainee? &&
+            @user_subject.progress? %>
+
+        <div class="description"><%= @user_subject.description %></div>
+        <div class="subject-content box-divider">
+          <div class="label-title"><%= t "subjects.content" %></div>
+          <%= @user_subject.content.html_safe if @user_subject.content %>
+        </div>
+      </div>
+
+      <div class="user-subjects-charts">
+        <%= render "user_subject_charts" %>
+      </div>
+      <br>
+
+      <div class="render-task">
+        <div class="user-task">
+          <div class="overview">
+            <%= t "subjects.task_overview" %>
+            <% if current_user.is_trainee? && @user_subject.progress? %>
+              <%= link_to "#",
+                data: {toggle: "modal", target: "#TaskModal"},
+                class: "pull-right btn-new-task" do %>
+                <span class="glyphicon glyphicon-plus"></span>
+                <%= t "subjects.task.new_task" %>
+              <% end %>
+            <% end %>
+          </div>
+
+          <div class="note-list user-task-list">
+            <%= render partial: "user_task", collection: @user_tasks %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 info-panel">
+      <%= render "info_panel" %>
+    </div>
+  </div>
+  <%= render "shared/task_modal" %>
+  <%= render "shared/member_modal" %>
+</div>

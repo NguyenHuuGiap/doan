@@ -1,0 +1,15 @@
+en:
+  roles:
+    table:
+      thread:
+        name: "Name"
+    buttons:
+      admin:
+        new: "New"
+        create: "Create"
+        update: "Update"
+      trainer:
+        new: "New"
+        create: "Create"
+        update: "Update"
+    select_all: "Select All"

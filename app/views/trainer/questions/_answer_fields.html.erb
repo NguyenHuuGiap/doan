@@ -1,0 +1,15 @@
+<div id="answer" class="form-group choice_question">
+  <div class="form-group row">
+    <%= f.label "content Answer", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-6">
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+    <div class="col-md-1 space-top-remove">
+      <%= f.label "Correct" %>
+      <%= f.check_box :is_correct, class: "correct" %>
+    </div>
+    <div class= "col-md-2 remove_fields">
+      <%= link_to_remove_fields t("question_admin.remove_answer"),f %>
+    </div>
+  </div>
+</div>

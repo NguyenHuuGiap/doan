@@ -1,0 +1,42 @@
+<div id="edit-task">
+  <div class="breadcrumb-paths">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to root_path do %>
+          <i class="glyphicon glyphicon-th-list"></i>
+          <%= t "layouts.paths" %>
+        <% end %>
+      </li>
+      <li><%= link_to t("layouts.all_courses"), courses_path %></li>
+      <li><%= link_to @course_subject.course_name, user_course_path(@user_course) %></li>
+      <li>
+        <%= link_to @user_subject.subject_name,
+          user_course_subject_path(@user_course, @user_subject.subject) %>
+      </li>
+      <li>
+        <%= link_to @task.name, course_subject_user_task_path(@course_subject,
+          @task.user_tasks.first) %>
+      </li>
+      <li class="active"><%= t "button.edit" %></li>
+    </ul>
+  </div>
+  <div class="form-edit-task">
+    <h4><%= @task.name %></h4>
+    <%= form_for :task, url: course_subject_task_path(
+      @course_subject, @task), html: {method: :patch}  do |f| %>
+        <%= render "shared/error_messages", object: @task %>
+        <div class="form-group">
+          <%= f.text_field :name, required: true,
+            placeholder: t("tasks.form.input_task_name"), class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :description, class: "form-control modal-text-area",
+            placeholder: t("tasks.form.input_task_description") %>
+        </div>
+        <div class="form-group">
+          <%= f.submit t("button.update"),
+            class: "btn btn-primary" %>
+        </div>
+    <% end %>
+  </div>
+</div>

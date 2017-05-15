@@ -1,0 +1,8 @@
+<% if params[:user_subject].present? && @user_subject.errors.blank? %>
+  $("#user-subject-<%= @user_subject.id %>").
+    replaceWith("<%= j render @user_subject %>");
+<% else %>
+  $(".action").html("<%= j render "shared/action_user_subjects" %>");
+  $(".user-lists").html("<%= j render "trainer/subjects/user_lists" %>");
+<% end %>
+$(".flash").html("<%= j render "shared/flash_banner" %>");

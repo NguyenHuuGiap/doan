@@ -1,0 +1,78 @@
+#list-subjects {
+  .input-group-btn {
+    padding-top: 20px;
+    padding-left: 50px;
+  }
+  .search-subject {
+    padding-left: 10px;
+  }
+
+  .subject-name {
+    width: 30%;
+  }
+
+  .tbl-subject {
+    .name {
+      width: 10%;
+    }
+    .avatar {
+      width: 10%;
+    }
+
+    .description {
+      width: 20%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 150px;
+      max-width: 250px;
+    }
+
+    .content {
+      width: 20%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 150px;
+      max-width: 250px;
+    }
+
+    .during_time, .action {
+      width: 20%;
+      text-align: center;
+    }
+  }
+  .form-new-tasks {
+    padding-top: 10px;
+    margin: 0px;
+    background-color: #CEF6D8;
+    .remove-field {
+      padding-left: 0px;
+    }
+  }
+}
+
+#admin-subject-show {
+  .subject-name {
+    margin-top: 0px;
+  }
+
+  .working-days {
+    padding-top: 5px;
+    color: #D02421;
+  }
+
+  .documents {
+    color: #D02421;
+  }
+
+  .content-subject {
+    padding-left: 10px;
+  }
+
+}
+
+#add-task-masters {
+  padding-left: 17%;
+  font-weight: bold;
+}

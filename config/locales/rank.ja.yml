@@ -1,0 +1,14 @@
+ja:
+  table:
+    thead:
+      rank: "ランク"
+      begin_point: "ポイントを開始"
+      end_point: "エンドポイント"
+  rank:
+    buttons:
+      new: "新しい"
+      create: "作ります"
+      update: "更新"
+  layouts:
+    rank: "ランク"
+

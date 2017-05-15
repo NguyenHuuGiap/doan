@@ -1,0 +1,21 @@
+<%= form_for task do |f| %>
+  <%= f.hidden_field :course_subject_id, value: @course_subject.id %>
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control", required: true,
+      placeholder: t("tasks.form.input_task_name") %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, class: "form-control modal-text-area",
+      placeholder: t("tasks.form.input_task_description") %>
+  </div>
+
+  <%= f.fields_for :user_tasks, user_task do |builder| %>
+    <%= builder.hidden_field :user_id, value: current_user.id %>
+    <%= builder.hidden_field :user_subject_id, value: @user_subject.id %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit (f.object.new_record? ? t("button.create")
+      : t("buttons.save")), class: "btn-action" %>
+  </div>
+<% end %>

@@ -1,0 +1,51 @@
+<div class="dropdown pull-right">
+  <button id="dLabel" type="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"
+    class="btn btn-default">
+    <span class="glyphicon glyphicon-align-justify"
+      aria-hidden="true"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right"
+    aria-labelledby="dLabel">
+    <li>
+      <% if @course.progress? %>
+        <% if @user_subjects.init.any? %>
+          <a href="<%= admin_status_subject_path @course_subject, "start" %>",
+            data-method="patch",
+            data-remote="true",
+            data-confirm="<%= t "admin.confirms.start_all" %>">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <%= t "admin.actions.show_subject.start_all" %>
+          </a>
+        <% end %>
+
+        <% unless @user_subjects.size == @user_subjects.finish.size ||
+          @user_subjects.init.any? %>
+          <a href="<%= admin_status_subject_path @course_subject, "finish" %>",
+            data-method="patch",
+            data-remote="true",
+            data-confirm="<%= t "admin.confirms.finish_all" %>">
+            <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+            <%= t "admin.actions.show_subject.finish_all" %>
+          </a>
+        <% end %>
+      <% end %>
+    </li>
+    <li>
+      <a href="<%= edit_admin_course_course_subject_path @course,
+        @course_subject %>">
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        <%= t "courses.buttons.admin.edit" %>
+      </a>
+    </li>
+    <li>
+      <a href="<%= admin_course_course_subject_path @course,
+        @course_subject %>",
+        data-method="delete",
+        data-confirm="<%= t "messages.delete.confirm" %>">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+        <%= t "button.delete" %>
+      </a>
+    </li>
+  </ul>
+</div>

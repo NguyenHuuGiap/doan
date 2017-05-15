@@ -1,0 +1,99 @@
+<tr id="user-subject-<%= user_subject.id %>">
+  <td class="user-name">
+    <%= link_to user_subject.user_name,
+      [:trainer, user_subject.user] %>
+    <% if user_subject.finish? %>
+      <%= link_to [:trainer, @course_subject, user_subject],
+        data: {method: :patch, remote: true,
+        confirm: t("messages.delete.confirm")},
+        class: "btn-reopen pull-right",
+        title: t("admin.actions.show_subject.reopen") do %>
+        <i><%= image_tag "reopen.png", class: "reopen-img img-circle" %></i>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <% if user_subject.finish? %>
+      <%= l user_subject.start_date, format: :default %>
+    <% elsif user_subject.progress? || user_subject.waiting? %>
+      <div class="form-edit">
+        <%= form_for [:trainer, @course_subject, user_subject],
+          remote: true do |f| %>
+          <%= f.text_field :start_date, value: user_subject.start_date ?
+            l(user_subject.start_date, format: :default) : "",
+            class: "date-edit datepicker", readonly: true %>
+          <%= f.button :submit, class: "btn-save", hidden: true %>
+        <% end %>
+      </div>
+    <% end %>
+  </td>
+  <td>
+    <% if user_subject.finish? %>
+      <%= l user_subject.end_date, format: :default %>
+    <% elsif user_subject.progress? || user_subject.waiting? %>
+      <div class="form-edit">
+        <%= form_for [:trainer, @course_subject, user_subject],
+          remote: true do |f| %>
+          <%= f.text_field :end_date, value: user_subject.end_date ?
+            l(user_subject.end_date, format: :default) : "",
+            class: "date-edit datepicker", readonly: true %>
+          <%= f.button :submit, class: "btn-save", hidden: true %>
+        <% end %>
+      </div>
+    <% end %>
+  </td>
+  <td>
+    <%= l(user_subject.user_end_date, format: :default) if user_subject.finish? %>
+  </td>
+  <td>
+    <span class="label-status <%= set_background_color_status user_subject.status %>">
+      <%= t "courses.labels.status.#{user_subject.status}" %>
+    </span>
+  </td>
+  <td>
+    <%= render "shared/progress_bar", percent: user_subject.percent_progress,
+        status: user_subject.status %>
+  </td>
+  <td class="action">
+    <% if @course.progress? %>
+      <% if user_subject.init? %>
+        <%= link_to t("admin.actions.show_subject.start"),
+          [:trainer, @course_subject, user_subject], data: {method: :patch,
+          remote: true, confirm: t("messages.delete.confirm")},
+          class: "btn btn-primary btn-status" %>
+      <% elsif user_subject.progress? %>
+        <%= link_to t("admin.actions.show_subject.finish"),
+          [:trainer, @course_subject, user_subject], data: {method: :patch,
+          remote: true, confirm: t("messages.delete.confirm")},
+          class: "btn btn-danger btn-finish btn-status" %>
+      <% elsif user_subject.waiting? %>
+        <%= link_to t("admin.actions.show_subject.finish"),
+          [:trainer, @course_subject, user_subject], data: {method: :patch,
+          remote: true, confirm: t("messages.delete.confirm")},
+          class: "btn btn-danger btn-finish btn-status" %>
+        <%= link_to t("admin.actions.show_subject.reject"),
+          [:trainer, @course_subject, user_subject], data: {method: :patch,
+          remote: true, confirm: t("messages.delete.confirm")},
+          class: "btn btn-warning btn-reject btn-status" %>
+      <% elsif user_subject.finish? %>
+        <%= link_to t("admin.actions.show_subject.reopen"),
+          [:trainer, @course_subject, user_subject], data: {method: :patch,
+          remote: true, confirm: t("messages.delete.confirm")},
+          class: "btn btn-success btn-reopen btn-status" %>
+      <% end %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "javascript:void(0)",
+      class: "btn-show", data: {id: user_subject.id} do %>
+      <i class="glyphicon glyphicon-chevron-down"></i>
+    <% end %>
+  </td>
+</tr>
+<% user_subject.user_tasks.includes(:task).each do |user_task| %>
+  <tr class="user-subject-<%= user_subject.id %>" hidden>
+    <td><%= user_task.task_name %></td>
+    <td class=<%= task_color user_task.status %>>
+      <%= t "user_tasks.statuses.#{user_task.status}" %></td>
+  </tr>
+<% end %>

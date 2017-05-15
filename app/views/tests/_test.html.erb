@@ -1,0 +1,17 @@
+<tr>
+  <td><%= object.created_at.to_time %></td>
+  <td><%= object.user_subject.subject.name %></td>
+  <td><%= object.status %></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>
+  <% if object.pending? %>
+    <%= link_to "start", test_path(object), class: "btn-show-request btn btn-xs btn-default" %>
+  <% elsif object.inprogress? %>
+    <%= link_to "testting", test_path(object), class: "btn-show-request btn btn-xs btn-default" %>
+  <% else%>
+    <%= link_to "result", results_path(id_test: object.id), class: "btn-show-request btn btn-xs btn-default" %>
+  <% end %>
+</td>
+</tr>

@@ -1,0 +1,105 @@
+#subject-show {
+  .subject-overview {
+    .description {
+      font-size: 120%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .user-task {
+    background-color: white;
+    padding: 10px;
+    .overview {
+      font-size: 150%;
+      color: #575a5b;
+      margin-bottom: 1.25em;
+    }
+
+    .assign-task {
+      .col-md-2 {
+        padding-right: 0px;
+        width: 15%;
+      }
+    }
+
+    .task-name {
+      font-size: 125%;
+
+      .edit-task {
+        margin-left: 14px;
+      }
+    }
+
+    .task-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .member-title {
+    font-size: 16px;
+  }
+
+  .btn-new-task {
+    font-size: 14px;
+  }
+
+  .btn-action, .btn-finished, .btn-continued, .btn-finish {
+    font-size: 12px;
+    line-height: 3;
+    padding: 0 2em;
+    border-radius: 100px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    background-color: transparent;
+    border: 1px solid #21abc7;
+    color: #21abc7;
+  }
+
+  .btn-finish, .btn-continue, .btn-finished, .btn-continued {
+    border: 1px solid rgba(255, 153, 0, 0.9);
+    color: rgba(255, 153, 0, 0.9);
+  }
+
+  .btn-action:hover {
+    background-color: #21abc7;
+    border-color: #21abc7;
+    color: #fff;
+  }
+
+  .btn-finish:hover, .btn-finished:hover, .btn-continued:hover {
+    background-color: rgba(255, 153, 0, 0.9);
+    border-color: rgba(255, 153, 0, 0.9);
+    color: #fff;
+  }
+  .user-task-list {
+    .td-image {
+      width: 50px;
+      height: 85px;
+    }
+  }
+
+  .note:hover {
+    background-color: #eaeaea;
+  }
+
+  .btn-finish-task, .btn-continue-task {
+    margin-top: 25px;
+    margin-right: 5px;
+    width: 100px;
+  }
+
+  .action-status {
+    display: inline-flex;
+  }
+}
+
+.header-title {
+  font-size: 200%;
+  color: #575a5b;
+  font-weight: 700;
+}

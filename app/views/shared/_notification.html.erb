@@ -1,0 +1,9 @@
+<li>
+  <%= link_to notification_link(notification), title: notification_content(notification) do %>
+    <div class="pull-left"><%= notification_image notification %></div>
+    <h4>
+      <div class="notification-content"><%= notification_content notification %></div>
+      <div class="notification-date"><%= l notification.created_at, format: :datetime %></div>
+    </h4>
+  <% end %>
+</li>

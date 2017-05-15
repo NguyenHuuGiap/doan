@@ -1,0 +1,30 @@
+#evaluations {
+  .tbl-evaluation {
+    .name {
+      width: 50%;
+    }
+    .action {
+      width: 10%;
+    }
+    .total_point {
+      width: 20%;
+
+    }
+    .current_rank {
+      width: 20%;
+    }
+  }
+
+  .tbl-evaluation-details {
+    .name {
+      width: 80%;
+    }
+    .point {
+      width: 20%;
+    }
+  }
+
+  .note {
+    margin-top: 10px;
+  }
+}

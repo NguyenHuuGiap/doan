@@ -1,0 +1,56 @@
+en:
+  courses:
+    start: "Start"
+    confirms:
+      confirm_clone: "Are you sure to clone this course?"
+      clone_success: "Clone success"
+      confirm_start: "Are you sure to start this course?"
+      confirm_finish: "Are you sure to finish this course?"
+      confirm_reopen: "Are you sure to reopen this course?"
+      not_clone: "Clone not success"
+    buttons:
+      admin:
+        new: "New"
+        edit: "Edit"
+        finish: "Finish"
+        reopen: "Reopen"
+    no_course: "No course to display"
+    start_date: "Start date"
+    end_date: "End date"
+    note: "Course Notes"
+    tabs:
+      overview: "Overview"
+      subjects: "Subjects"
+      trainees: "Trainees"
+      trainers: "Trainers"
+    table:
+      id: "ID"
+      name: "Name"
+      trainers: "Trainers"
+      language: "Language"
+      location: "Location"
+      status: "Status"
+      all_status: "All status"
+    labels:
+      trainer: "Trainers "
+      trainee: "Trainees "
+      location: "Location: "
+      status:
+        init: "New"
+        progress: "Progress"
+        finish: "Finish"
+    users:
+      name: "Name"
+      email: "Email"
+    form:
+      input_course_name: "Enter course name..."
+      input_course_description: "Enter course description..."
+      input_course_start_date: "Enter course start-date..."
+      input_course_end_date: "Enter course end-date..."
+    document: "Add Document"
+    document_name: "Document name"
+    document_remove: "Remove"
+    time: "Course's Time is from %{start_date} to %{end_date}"
+    assign_trainers: "Assign trainers"
+    assign_trainees: "Assign trainees"
+    location: "Location"

@@ -1,0 +1,37 @@
+<%= form_for @test do |f| %>
+  <ol>
+    <%= f.fields_for :results do |ff| %>
+      <li>
+        <%= ff.object.question.content %>
+        <ul style="list-style-type: none;" >
+          <% if ff.object.question.single?%>
+            <% ff.object.question.answers.each do |answer| %>
+              <li class="test">
+                <label class= "radio" ><%= ff.radio_button :answer_ids, answer.id, checked: JSON.parse(ff.object.answer_ids).include?(answer.id), disabled: true%>
+                  <%= answer.content %>
+                </label>
+              </li>
+            <% end %>
+            <% if @array_questions.include?(ff.object.question.id) %>
+              <p class="label label-primary">Correct answer</p>
+            <% else %>
+              <p class="label label-danger">Wrong answer</p>
+            <% end %>
+          <% else %>
+            <% ff.object.question.answers.each do |answer| %>
+              <li>
+                <%= ff.check_box :answer_ids, {multiple: true, disabled: true, checked: JSON.parse(ff.object.answer_ids).include?(answer.id)}, answer.id %>
+                  <%= answer.content %>
+              </li>
+            <% end %>
+            <% if @array_questions.include?(ff.object.question.id) %>
+              <p class="label label-primary">Correct answer</p>
+            <% else %>
+              <p class="label label-danger">Wrong answer</p>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ol>
+<% end %>

@@ -1,0 +1,24 @@
+<div id="programming_languages profile-active">
+   <p class="pull-right"><%= link_to t("button.create"),
+     new_admin_programming_language_path, class: "btn btn-success" %></p>
+   <table class="table table-striped tbl-programming_language">
+     <thead>
+       <tr>
+         <th class="name"><%= t "table.thead.name" %></th>
+         <th class="action"><%= t "table.thread.action" %></th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @programming_languages.each do |programming_language| %>
+         <tr>
+           <td class="name"><%= programming_language.name %></td>
+           <td class="action">
+             <%= link_to t("button.edit"), edit_admin_programming_language_path(programming_language) %> &nbsp;
+             <%= link_to t("button.delete"), admin_programming_language_path(programming_language),
+               method: :delete, data: {confirm: t("messages.delete.confirm")} %>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>

@@ -1,0 +1,316 @@
+en:
+  name_system: "Framgia TMS"
+  user-header:
+    courses: "Courses"
+  document:
+    name: "Documents"
+    description: "Document description"
+  error:
+    form: "The form contains "
+    error: "error"
+    supervisor: "Must has at least one supervisor"
+    leader: "Must has one leader"
+    wrong_end_date: "Must be greater than start date"
+    not_authorize: "You are not authorized to access this page."
+    wrong_format: "must have format dd/mm/yyyy"
+  staticpages:
+    framgia: "Framgia Trainning Management System"
+    profile: "Profile"
+    logout: "Logout"
+    login: "Sign in"
+    home: "Home"
+    trainer: "Trainer"
+    admin: "Admin"
+    content:
+      title: "learn more. faster."
+      lead_in: "FREE classes for experienced engineers"
+      box1: "Basic"
+      box2: "Advance"
+    portfolio:
+      title: "upcoming core courses"
+      content: "Demanding, 8-week course that meets twice a week from 7-9 PM and ends with a final group project."
+      text_1: "Learn how to build web apps using Rails 5."
+      text_2: "Learn how to build web apps using Lavarel."
+      text_3: "Learn how to build apps Android."
+      btn: "Subscribe to Mailing List"
+      box_name_1: "Ruby"
+      box_name_2: "Php"
+      box_name_3: "Android"
+    div3:
+      name: "New program"
+      content1: "Looking for a great software engineering job?"
+      content2: "Get funding and mentorship for your team?"
+      link1: "SELECT"
+      link2: "PUSH"
+    principles:
+      title: "Our Training Principles"
+      content: "We want to work with the most dedicated startup engineers and designers.We want to help you become the best you can be, alongside talented peers."
+      header1: "Real Tutorials"
+      content1: "We'll learn how apps like Facebook, Instagram, and Twitter are built."
+      header2: "Project 1"
+      content2: "You'll be learning and working with the best."
+      header3: "Project 2"
+      content3: "You'll build real apps you'll be proud to show to customers and employers."
+    counters:
+      title: "Developing Developers"
+      content: "Master new skills in programming, design and product building."
+      learning: "Learning"
+      completed: "Completed"
+      manage: "Manage"
+  messages:
+    delete:
+      confirm: "Are you sure?"
+    continue:
+      confirm: "Will you start do this task now?"
+  flashs:
+    user:
+      mustlogin: "You need to login to access!"
+    messages:
+      created: "%{model_name} was created successfully!"
+      not_created: "%{model_name} couldn't be created"
+      deleted: "%{model_name} was deleted successfully!"
+      not_deleted: "%{model_name} couldn't be deleted!"
+      updated: "%{model_name} was updated successfully!"
+      not_updated: "%{model_name} couldn't be updated"
+      start_course: "Course was started successfully"
+      finish_course: "Course was finished successfully"
+      reopen_course: "Course was reopened successfully"
+      course_not_upate: "Course couldn't updated successfully"
+      unknow_errors: "Transaction fails"
+      not_find: "%{model_name} couldn't find"
+      record_not_found: "Sorry, no record was found!"
+  tasks:
+    update: "Update"
+  subjects:
+    start_date: "Start date:"
+    start_date: "Start date: %{start_date}"
+  signins:
+    banner: "Login"
+  activity:
+    finish_course: "has finished course "
+    start_course: "has started course "
+    start_subject: "has started subject"
+    finish_subject: "has finished subject"
+    request_subject: "has been requested to finish subject"
+    reject_subject: "has been rejected request to finish subject"
+    reopen_subject: "has been reopened"
+  courses:
+    course: "Course"
+    name: "Name:"
+    description: "Description:"
+    list_subjects: "List subjects:"
+    image: "Image:"
+    status: "Status:"
+    start_date: "Start date:"
+    end_date: "End date:"
+    language: "Language"
+    trainees: "Trainees"
+    trainers: "Trainers"
+    buttons:
+      admin:
+        start:
+          finished: "Finished"
+      trainer:
+        edit: "Edit"
+    tab:
+      trainees: "Trainees"
+      trainers: "Trainers"
+  status:
+    start: "start"
+    progress: "progress"
+    finished: "finished"
+  datetime: &datetime
+    formats:
+      default: "%Y/%m/%d"
+      short: "%y/%m/%d"
+      year: "%d/%m/%Y"
+      month_year: "%m/%Y"
+      year_month: "%Y/%m"
+      datetime: "%d-%m-%Y %H:%M"
+  date:
+    <<: *datetime
+  time:
+    <<: *datetime
+  datepicker:
+    time:
+      default: "yyyy/mm/dd"
+      short: "yyyy/mm"
+  layouts:
+    system: "System"
+    courses: "Courses"
+    subjects: "Subjects"
+    course: "Course:"
+    subject: "Subject:"
+    course_masters: "Course Masters"
+    roles: "Roles"
+    evaluation_templates: Evaluation Templates
+    ranks: "Ranks"
+    evaluation: "Evaluation"
+    university: "University"
+    status: "Status"
+    evaluations: "Evaluations"
+    user_profiles: "User profiles"
+    users: "Users"
+    locations: "Locations"
+    organization_chart: "Orgazination Chart"
+    universities: "Universities"
+    statuses: "Statuses"
+    user_types: "User types"
+    training_schedule: "Training schedule"
+    training_management: "Training management"
+    footer:
+      street: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem, Ha Noi, Viet Nam"
+      phone: "84-4-3795-5417"
+      mail_to: "hr_team@framgia.com"
+      about_us: "About Framgia Viet Nam"
+      content_about_us: "Framgia Vietnam is a company 100% Japan funded specializing in design, development applications such as mobile phone software, games, social and website applications."
+      home: "Home |"
+      blog: "Blog |"
+      about: "About |"
+      faq: "Faq |"
+      contact: "Contact |"
+      copy_right: "Copyright 2016 Framgia, Inc. All rights reserved."
+      company: "FramgiaVietNam"
+    path: "Paths"
+    all_courses: "All Courses"
+    notifications:
+      view_all: "View all"
+      notification: "New notifications"
+  button:
+    save: "Save"
+    edit: "Edit"
+    delete: "Delete"
+    new: "New"
+    create: "Create"
+    update: "Update"
+    clone: "Clone"
+    search: "Seach"
+    finish: "Finish"
+    send: "Send"
+    cancel: "Cancel"
+    close: "Close"
+    show: "Show"
+    continue: "Continue"
+  buttons:
+    edit: Edit
+  evaluations:
+    evaluate: "Evaluate"
+    create: "Create"
+    update: "Update"
+  breadcrumbs:
+    paths: "Paths"
+    courses:
+      all: "All Courses"
+      new: "New"
+      edit: "Edit"
+    subjects:
+      all: "All Subjects"
+      new: "New"
+      edit: "Edit"
+      new_task: "New Task"
+      task_masters: "Task Masters"
+    roles:
+      all: "All roles"
+      new: "New"
+      edit: "Edit"
+      allocate_permissions: "Allocate Permissions"
+    evaluation_templates:
+      all: "All Evaluation Templates"
+      new: "New"
+      edit: "Edit"
+    evaluations:
+      all: "All Evaluations"
+      new: "New"
+      edit: "Edit"
+    ranks:
+      all: "All Ranks"
+      new: "New"
+      edit: "Edit"
+    profiles:
+      all: "User Profiles"
+      edit: "Edit"
+    universities:
+      all: "All Universities"
+      new: "New"
+      edit: "Edit"
+    statuses:
+      all: "All Statuses"
+      new: "New"
+      edit: "Edit"
+    user_types:
+      all: "All Types"
+      new: "New"
+      edit: "Edit"
+    users:
+      all: "All User"
+      new: "New"
+      edit: "Edit"
+    locations:
+      all: "All Locations"
+      new: "New"
+      edit: "Edit"
+    feed_backs:
+      all: "All Feed Back"
+    dashboard:
+      all: "Dashboard"
+    organization_charts:
+      all: "Organization Chart"
+    training_managements:
+      all: "Training Management"
+  datatables:
+    search_name: "Search name"
+    search_name_email: "Search name or email"
+    show_menu: "Show _MENU_"
+  notifications:
+    notification: "Notifications"
+  feed_backs:
+    title: "Feed back"
+    content: "Content"
+    user: "User"
+    index: "Index"
+  charts:
+    user_sign_up:
+      title: "Number of User sign up"
+      number_user: "Number of User"
+      number_user_show: "Number of sign up : <b>{point.y:.1f} users</b>"
+    new_course:
+      title: "Number new Course"
+      number_course: "Number of Course"
+      number_course_show: "Number new course : <b>{point.y:.1f} course</b>"
+    course_finished:
+      title: "Number finished Course"
+      number_course: "Number of Course"
+      number_course_show: "Number finished course : <b>{point.y:.1f} course</b>"
+  table:
+    thead:
+      max_point: Max Point
+      min_point: Min Point
+    thread:
+      action: Action
+  user_tasks:
+    description: Description
+  quick_form:
+    university: "Enter university name..."
+    usertype: "Enter type name..."
+    location: "Enter location name..."
+  mail:
+    by_day:
+      user_name: "%{user_name}"
+      subject_name: "%{subject_name}"
+      progress_done: "%{progress}%"
+      title: "[Report][Daily] Framgia Education - [%{time}]"
+      finish_task: "- %{task_name}"
+      course: "Course: %{name}"
+      no_task_finish: "None"
+      name: "Trainee"
+      subject: "Subject"
+      task_finish: "Finish Task"
+      progress: "Progress"
+      task_continue: "Continue Task"
+      continue_task: "- %{task_name}"
+      task_init: "Init Task"
+      init_task: "- %{task_name}"
+  user_subjects:
+    init: "Init"
+    in_progress: "In progress"
+    finished: "Finished"

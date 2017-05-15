@@ -1,0 +1,7 @@
+<% provide :submit, t("rank.buttons.update") %>
+<div id="ranks" class="evaluation-active">
+  <div class="title"><%= t "table.thead.rank" %>&nbsp;:&nbsp;
+    <%= @rank.rank_value %>
+  </div>
+  <%= render "form" %>
+</div>

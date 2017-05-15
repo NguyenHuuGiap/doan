@@ -1,0 +1,21 @@
+<%= form_for [:admin, @evaluation_template] do |f| %>
+  <div class="row">
+    <%= render "shared/error_messages", object: @evaluation_template %>
+    <div class="col-md-5">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control", required: true %>
+
+      <%= f.label :min_point %>
+      <%= f.number_field :min_point, min: Settings.evaluations.min,
+        class: "form-control", required: true %>
+
+      <%= f.label :max_point %>
+      <%= f.number_field :max_point, min: Settings.evaluations.min,
+        class: "form-control", required: true %>
+      <br>
+      <div class="pull-right">
+        <%= f.submit yield(:submit), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

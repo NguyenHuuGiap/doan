@@ -1,0 +1,59 @@
+<div id="users">
+  <%= form_for [:trainer, @user] do |f| %>
+    <div class="row">
+      <%= render "shared/error_messages", object: @user %>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: "form-control" %><br>
+        </div>
+        <div class="form-group">
+          <%= f.label :role_id %>
+          <span>
+            <%= f.collection_check_boxes :role_ids, load_user_roles(@user), :id,
+              :name do |role| %>
+              <span class="label label-default">
+                <%= role.label do %>
+                  <%= role.check_box id: "check_role_#{role.object.role_type}",
+                    disabled: true, checked: true %> &nbsp;
+                  <%= role.text %> &nbsp;
+                <% end %>
+              </span>
+            <% end %>
+          </span>
+        </div>
+        <div class="form-group">
+          <%= f.label :trainer_id %>
+          <%= f.select :trainer_id, options_for_select(@trainers.collect{|trainer| [trainer.name,
+            trainer.id]}, f.object.trainer_id), {}, {disabled: true,
+            class: "form-control"} %>
+        </div>
+      </div>
+      <%= render "shared/edit_profile_form", f: f %>
+    </div>
+
+    <%= render "profile_form", f: f %>
+
+    <div class="row">
+      <div class="col-md-12">
+        <% if f.object.new_record? %>
+          <%= f.submit t("buttons.create_and_continue"),
+            name: "create_and_continue",
+            class: "btn btn-primary pull-right btn-create-and-continue btn-submit" %>
+          <%= f.submit t("buttons.create"), class: "btn btn-primary pull-right btn-submit" %>
+        <% else %>
+          <%= f.submit t("buttons.update"), class: "btn btn-primary pull-right btn-submit" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% [@location, @user_type, @university].each do |object| %>
+  <div class="modal fade modal-form" id="<%= object.class.name.downcase %>-modal" role="dialog">
+    <%= render "shared/quick_form", object: object, managers: @managers %>
+  </div>
+<% end %>

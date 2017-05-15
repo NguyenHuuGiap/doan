@@ -1,0 +1,18 @@
+#statuses {
+  .tbl-status {
+    .index, .name{
+      width: 35%;
+    }
+    .action {
+      width: 30%;
+      text-align: center;
+    }
+  }
+}
+
+.status {
+  margin: 5px;
+}
+.status-action {
+  margin-top: 25px;
+}

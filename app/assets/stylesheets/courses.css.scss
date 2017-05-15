@@ -1,0 +1,90 @@
+#trainee-course {
+  .status {
+    font-size: 60%;
+  }
+}
+
+#user-course-index {
+  margin-bottom: 100px;
+
+  .card {
+    align-items: center;
+    -webkit-box-align: center;
+    display: flex;
+    text-align: left;
+    padding: 2%;
+    height: 150px;
+  }
+
+  a {
+    color: #21abc7;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+  }
+
+  .badge {
+    display: block;
+    height: 100px;
+    padding: 0.3125em;
+    position: relative;
+    width: 100px;
+    background-color: white;
+  }
+
+  .image-badges {
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .bucket {
+    padding: 1.25em;
+  }
+
+  .bucket-media {
+    float: left;
+    margin-right: 1.25em;
+  }
+
+  .bucket-content {
+    vertical-align: middle;
+    display: table-cell;
+    width: 10000px;
+
+    h2 {
+      font-size: 180%;
+      font-family: "Open Sans",Helvetica,Arial,sans-serif;
+      font-weight: 300;
+      line-height: 1.4;
+      margin-bottom: 0.3125em;
+      margin-top: 0;
+    }
+  }
+
+  .label {
+    margin: 0;
+    padding: .1em .6em .1em;
+  }
+
+  p {
+    display: block;
+    font-weight: 300;
+    font-size: 100%;
+    color: #575a5b;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+
+  .course-status {
+    font-size: 57%;
+  }
+
+  .course-name {
+    font-size: 20px;
+  }
+}

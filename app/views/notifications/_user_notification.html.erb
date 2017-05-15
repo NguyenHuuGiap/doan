@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= link_to notification_link notification do %>
+      <div class="pull-left">
+        <%= set_image notification.trackable,
+          Settings.image_size_40 %>&nbsp;&nbsp;
+      </div>
+      <div>
+        <div><%= notification_content notification %></div>
+        <small class="text-muted">
+          <%= l notification.created_at, format: :datetime %>
+        </small>
+      </div>
+    <% end %>
+  </td>
+</tr>

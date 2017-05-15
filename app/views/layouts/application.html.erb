@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield :title %></title>
+    <%= favicon_link_tag "logo.png" %>
+    <meta name="current-user" id="<%= current_user.try :id %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": true %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
+    <%= csrf_meta_tags %>
+    <meta name="turbolinks-cache-control" content="no-cache">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    </script>
+  </head>
+  <% if controller_name == "chats" %>
+    <body id="body-chat" class="skin-blue sidebar-mini wysihtml5-supported fixed" >
+      <div class="wrapper">
+        <%= render "layouts/chat_header" if current_user.present? %>
+        <div class="content-wrapper">
+          <div id="message-content">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </body>
+  <% elsif current_user.present? &&
+    (@namespace == "trainer" || @namespace == "admin") %>
+    <body id="body-admin" class="skin-blue sidebar-mini wysihtml5-supported" >
+      <div class="wrapper">
+        <%= render "layouts/#{@namespace}_sidebar" %>
+        <div class="content-wrapper">
+          <section class="content">
+            <div class="flash">
+              <%= render "layouts/flash" %>
+            </div>
+            <ol class="breadcrumb">
+              <%= render_breadcrumbs tag: :li, separator: "" %>
+            </ol>
+            <%= yield %>
+          </section>
+        </div>
+      </div>
+    </body>
+  <% else %>
+    <body id="body-user">
+      <%= render "layouts/user_header" %>
+      <div class="body_wrapper <%= class_body controller_name %>">
+        <div class="flash">
+          <%= render "layouts/flash" %>
+        </div>
+        <%= yield %>
+      </div>
+      <%= render "layouts/footer" unless footer_not_show controller_name %>
+    </body>
+  <% end %>
+  <%= render "shared/feed_back_form" %>
+</html>
