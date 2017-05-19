@@ -6,6 +6,7 @@ Rails.application.config.assets.precompile += %w(signin.js)
 Rails.application.config.assets.precompile += %w( ckeditor/* )
 Rails.application.config.assets.precompile += %w(test.js)
 Rails.application.config.assets.precompile += %w(countdown.js)
+Rails.application.config.assets.precompile += %w(admin/index_group.js)
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

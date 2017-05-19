@@ -59,6 +59,11 @@
 //= require admin/user_profile
 //= require admin/user_subject
 //= require growl
+//= require bootstrap-notify
+
+/* libraries bower*/
+//= require gojs/go.js
+//= require gojs/go-debug.js
 
 $(document).on("turbolinks:load ajaxComplete", function() {
   $(".alert").delay(3000).fadeOut();

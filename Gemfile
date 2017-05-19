@@ -41,6 +41,7 @@ gem "exception_notification"
 gem "business_time"
 gem "paranoia", github: "rubysherpas/paranoia", branch: "rails5"
 gem "rails-assets-growl"
+gem 'bootstrap-growl-rails'
 
 group :development, :test do
   gem "fabrication"

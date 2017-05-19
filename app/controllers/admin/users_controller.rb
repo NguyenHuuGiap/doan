@@ -40,12 +40,16 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes user_params
-      sign_in(@user, bypass: true) if current_user? @user
-      flash[:success] = flash_message "updated"
-      redirect_to admin_users_path
+    if params[:nodeDataArray]
+      update_user_charts params[:nodeDataArray]
     else
-      render :edit
+      if @user.update_attributes user_params
+        sign_in(@user, bypass: true) if current_user? @user
+        flash[:success] = flash_message "updated"
+        redirect_to admin_users_path
+      else
+        render :edit
+      end
     end
   end
 
@@ -79,6 +83,14 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+
+  def update_user_charts params
+    params.each do |_index, user_param|
+      user = User.find_by id: user_param[:key]
+      user.update_attributes parent_path: user_param[:parent]
+    end
+  end
+
   def user_params
     params.require(:user).permit User::ATTRIBUTES_PARAMS
   end

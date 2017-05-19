@@ -1,0 +1,58 @@
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js" %>
+<%= javascript_include_tag "admin/index_group.js" %>
+<%= javascript_tag do %>
+  window.current_user_role = <%= raw current_user.roles.pluck(:name).include?("admin").to_json %>
+  window.user_service = <%= raw @user_service.to_json %>
+<% end %>
+<div id="group-body">
+  <div class="row">
+    <div class = "col-md-6">
+      <div class="input-group">
+        <input type="search" id="search-group" class="form-control" />
+        <span class="input-group-addon btn btn-primary search-id" name="submit">
+          <i class="fa fa-search"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="sample" class="group-diagram-div">
+      <div id="group-div" class="group-diagram" ></div>
+       <div id="group-overview-div"></div>
+       <div id="contextMenu">
+        <ul>
+          <li id="detail-user-group"><a href="#" onclick="return false;"
+            target="_self"><%= t "dashboard.groups.detail_user_group" %></a></li>
+          <li id="new-group"><a href="#" onclick="return false;"
+           target="_self"><%= t "dashboard.groups.new_group" %></a></li>
+          <li id="new-group-object"><a href="#" onclick="return false;"
+           target="_self"><%= t "dashboard.groups.new_group_children" %></a></li>
+          <li id="edit-group"><a href="#" onclick="return false;"
+           target="_self"><%= t "dashboard.groups.edit_group" %></a></li>
+          <li id="delete-group"><a href="#" onclick="return false;"
+            target="_self"><%= t "dashboard.groups.delete_group" %></a></li>
+          <li id="add-user-group"><a href="#" onclick="return false;"
+            target="_self"><%= t "dashboard.groups.add_user_group" %></a></li>
+        </ul>
+      </div>
+  </div>
+  <div id="modal-organization" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true" id ="new_workspace">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">
+            <%= t "dashboard.groups.create_group" %>
+          </h4>
+        </div>
+        <div class="modal-config">
+          <div id="workspace_form">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="loader hide hide-load-modal"></div> -->

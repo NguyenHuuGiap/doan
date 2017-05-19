@@ -1,5 +1,5 @@
 $(document).on("turbolinks:load", function() {
-  if ($("#infinite-scrolling").size() > 0) {
+  if ($("#infinite-scrolling").length > 0) {
     bind_for_loading_more_chat_room();
     load_more_messages();
   }

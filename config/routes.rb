@@ -31,6 +31,8 @@ Rails.application.routes.draw do
       resource :evaluations
     end
 
+    resources :charts, only: :index
+
     resources :evaluations, only: :index
 
     patch "status_subject/:course_subject_id/:status" => "status_subjects#update",
